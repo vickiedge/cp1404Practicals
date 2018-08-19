@@ -17,3 +17,4 @@ for i in range(number_of_quick_picks):
     quick_picks.sort()
 print(" ".join("{:2}".format(number) for number in quick_picks))
 
+
