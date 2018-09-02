@@ -11,5 +11,8 @@ print(text)
 words = list(word_count_dict.keys())
 words.sort()
 max_length = max((len(word) for word in words))
+print(max_length)
 for word in words:
     print("{:{}} : {}".format(word, max_length, word_count_dict[word]))
+
+
