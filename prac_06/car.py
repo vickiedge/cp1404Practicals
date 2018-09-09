@@ -13,9 +13,8 @@ class Car:
         self.fuel = fuel
         self.odometer = 0
 
-
     def __str__(self):
-        return "{}, fuel={}, {}".format(self.name, self.fuel, self.odometer)
+        return "{}, fuel={}, odometer={}".format(self.name, self.fuel, self.odometer)
 
     def add_fuel(self, amount):
         """Add amount to the car's fuel."""
