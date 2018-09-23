@@ -3,7 +3,7 @@
 def main():
     name = input("What is your name? ")
     choice = input("(H)ello\n(G)oodbye\n(Q)uit").upper()
-    while choice != Q:
+    while choice != "Q":
         if choice == "H":
             print("Hello ",name)
         elif choice == "G":
