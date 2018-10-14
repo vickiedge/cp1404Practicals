@@ -10,21 +10,21 @@ import shutil
 print("Starting directory is: {}".format(os.getcwd()))
 os.chdir('FilesToSort')
 print(os.getcwd())
-filenames = []
 extension_to_category = {}
 for name in os.listdir('.'):
     extension = name[name.find('.') + 1:]
-    if name.find(extension):
-        filenames.append(name)
-        extension_to_category.update({extension:""})
-for extension in extension_to_category.keys():
-    category = input("What category would you like to sort {} files into? ".format(extension))
-    if category not in extension_to_category.values():
-        os.mkdir(category)
-    extension_to_category.update({extension: category})
-for name in filenames:
-    if extension == extension_to_category.keys():
-        shutil.move(extension , category + '/' + extension)
+    # extension_to_category.update({extension:""})
+    if extension not in extension_to_category:
+        category = input("What category would you like to sort {} files into? ".format(extension))
+        if category not in extension_to_category.values():
+            os.mkdir(category)
+        extension_to_category.update({extension: category})
+
+
+
+# for name in filenames:
+#     if extension == extension_to_category.keys():
+#         shutil.move(name , category + '/' + name)
 print(extension_to_category)
-print(filenames)  
+
 
