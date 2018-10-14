@@ -18,11 +18,8 @@ for name in os.listdir('.'):
         if category not in extension_to_category.values():
             os.mkdir(category)
         extension_to_category[extension] = category
-for extension, category in extension_to_category.items():
-    if name in os.listdir('.') == extension:
-        print(category)
+    for extension, category in extension_to_category.items():
+        if name in os.listdir('.') == extension:
+            print("match")
     #     shutil.move(name , category + '/' + name)
 print(extension_to_category)
-
-
-
