@@ -19,12 +19,8 @@ for name in os.listdir('.'):
         if category not in extension_to_category.values():
             os.mkdir(category)
         extension_to_category.update({extension: category})
-
-
-
-# for name in filenames:
-#     if extension == extension_to_category.keys():
-#         shutil.move(name , category + '/' + name)
+    if extension == extension_to_category.keys():
+        shutil.move(name , category + '/' + name)
 print(extension_to_category)
 
 
