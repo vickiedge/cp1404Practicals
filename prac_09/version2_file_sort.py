@@ -13,14 +13,16 @@ print(os.getcwd())
 extension_to_category = {}
 for name in os.listdir('.'):
     extension = name[name.find('.') + 1:]
-    # extension_to_category.update({extension:""})
     if extension not in extension_to_category:
         category = input("What category would you like to sort {} files into? ".format(extension))
         if category not in extension_to_category.values():
             os.mkdir(category)
-        extension_to_category.update({extension: category})
-    if extension == extension_to_category.keys():
-        shutil.move(name , category + '/' + name)
+        extension_to_category[extension] = category
+for extension, category in extension_to_category.items():
+    if name in os.listdir('.') == extension:
+        print(category)
+    #     shutil.move(name , category + '/' + name)
 print(extension_to_category)
+
 
 
