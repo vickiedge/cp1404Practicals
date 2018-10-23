@@ -10,16 +10,19 @@ import shutil
 print("Starting directory is: {}".format(os.getcwd()))
 os.chdir('FilesToSort')
 print(os.getcwd())
+# create lookup table for where extensions go
 extension_to_category = {}
 for name in os.listdir('.'):
     extension = name[name.find('.') + 1:]
+    # this if statement is only for extensions not seen before
     if extension not in extension_to_category:
         category = input("What category would you like to sort {} files into? ".format(extension))
-        if category not in extension_to_category.values():
-            os.mkdir(category)
         extension_to_category[extension] = category
-    for extension, category in extension_to_category.items():
-        if name in os.listdir('.') == extension:
-            print("match")
-    #     shutil.move(name , category + '/' + name)
+        # if category not in extension_to_category.values():
+        try:
+            os.mkdir(category)
+        except:
+            pass
+    print(name, extension_to_category[extension] + '/' + name)
+    shutil.move(name, extension_to_category[extension] + '/' + name)
 print(extension_to_category)

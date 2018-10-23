@@ -21,10 +21,15 @@ class NameLabellerApp(App):
 
     def create_widgets(self):
         for name in self.names:
-            temp_button = Button(text=name)
-            self.root.ids.entries_box.add_widget(temp_button)
-            temp_button.bind(on_release=self.press_entry)
-            self.list = "Names are: {}".format(self.names)
+            temp_button = Button(text=name, id=name)
+            # temp_button.bind(on_release=self.press_entry)
+            self.root.ids.name_label_boxes.add_widget(temp_button)
+
+    # def press_entry(self, instance):
+    #     self.status_text = "Names are: {}".format(self.names)
+    #
+    # def clear_all(self):
+    #     self.root.ids.name_label_boxes.clear_widgets()
 
 
 NameLabellerApp().run()
