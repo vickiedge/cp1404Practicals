@@ -16,6 +16,7 @@ def wiki_mini_search():
         search = input("Enter page title or search phrase: ")
     print("Thanks for searching")
 
+    # This fails to work, unsure why??
     #     try:
     #         search = wikipedia.summary(search)
     #     except wikipedia.exceptions.DisambiguationError as e:
